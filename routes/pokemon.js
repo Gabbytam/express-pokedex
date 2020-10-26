@@ -3,6 +3,8 @@ const router = express.Router();
 const db= require('../models');
 //const { default: Axios } = require('axios');
 const axios= require('axios');
+//require the helpers js file and set to variable so it can be referenced and used in the object part of res.render 
+const helper= require('../helpers');
 
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', function(req, res) {
@@ -10,7 +12,7 @@ router.get('/', function(req, res) {
   db.pokemon.findAll()
   .then(foundMons=> {
     //console.log('here are the users: ', foundMons);
-    res.render('favorite', {favList: foundMons});
+    res.render('favorite', {favList: foundMons, fxn: helper}); //pass the helper with ejs render
   })
   
 });
@@ -41,7 +43,7 @@ router.get('/:id', (req, res)=> {
     axios.get(`https://pokeapi.co/api/v2/pokemon/${foundMon.name}`)
     .then(response=> {
       //res.send(response.data);
-      res.render('show', {monId: req.params.id, monName: foundMon.name, monData: response.data});
+      res.render('show', {monId: req.params.id, monName: foundMon.name, monData: response.data, fxn: helper}); //pass the helper with ejs render
     })
     .catch(err=> {
       console.log('axios.then error: ', err);
@@ -68,3 +70,7 @@ module.exports = router;
     //moves is an array of objects, inside those objects are move --> name
   //images: sprites --> other -->  official-dafault --> front_default
 
+// function capitalize(name) {
+//   name= name.replace(name[0], name[0].toUpperCase());
+//   return name;
+// }

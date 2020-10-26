@@ -1,6 +1,13 @@
-<h1>Info About <%= monName %>, ID: <%= monId %></h1>
+<h1>Info About <%= fxn.capitalize(monName) %>, ID: <%= monId %></h1>
 
 <img src='<%- monData.sprites.other.dream_world.front_default %>' > 
+
+<h3>Abilities:</h3>
+<ul>
+    <% monData.abilities.forEach(ability=> { %>
+        <li><%= ability.ability.name %></li>
+    <% }) %>
+</ul>
 
 <h3>Moves: </h3>
 <ul>
@@ -8,3 +15,8 @@
         <li> <%= move.move.name %> </li>
     <% }) %>
 </ul>
+
+
+<h3>Height:</h3>
+<p><%= monData.height %></p>
+

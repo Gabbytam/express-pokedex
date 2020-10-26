@@ -1,6 +1,6 @@
 <h1>Favorite Pokemons</h1>
 <ul>
     <% favList.forEach(pokemon=> { %>
-        <li> <%= pokemon.id %>: <%= pokemon.name %> </li>
+        <li> <a href='/pokemon/<%= pokemon.id %>'><%= pokemon.id %>: <%= fxn.capitalize(pokemon.name) %> </li>
     <% }) %>
 </ul>
