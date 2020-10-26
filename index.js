@@ -4,15 +4,30 @@ const axios = require('axios');
 const ejsLayouts = require('express-ejs-layouts');
 const app = express();
 const port = process.env.PORT || 3000;
+//const db= require('./models');
 
 app.use(require('morgan')('dev'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 
+// db.pokemon
+//   .create({
+//     name: "ekans",
+//     id: 2
+//   })
+//   .then(function (poke) {
+//     console.log("Created: ", poke.name);
+//   });
+
+// db.pokemon.findAll().then(function (poke) {
+//   console.log("Found: ", poke.name);
+// });
+
+
 // GET / - main index of site
 app.get('/', function(req, res) {
-  const pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
+  const pokemonUrl = 'http://pokeapi.co/api/v2/pokemon?limit=150';
   // Use request to call the API
   axios.get(pokemonUrl).then( function(apiResponse) {
     const pokemon = apiResponse.data.results;

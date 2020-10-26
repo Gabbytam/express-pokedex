@@ -1,0 +1,10 @@
+<h1>Info About <%= monName %>, ID: <%= monId %></h1>
+
+<img src='<%- monData.sprites.other.dream_world.front_default %>' > 
+
+<h3>Moves: </h3>
+<ul>
+    <% monData.moves.forEach(move=> { %>
+        <li> <%= move.move.name %> </li>
+    <% }) %>
+</ul>
