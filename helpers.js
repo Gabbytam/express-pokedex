@@ -7,3 +7,4 @@ function capitalize(name) {
 
 //export the function
 module.exports= {capitalize};
+

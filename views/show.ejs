@@ -1,22 +1,25 @@
 <h1>Info About <%= fxn.capitalize(monName) %>, ID: <%= monId %></h1>
 
-<img src='<%- monData.sprites.other.dream_world.front_default %>' > 
+<div>
+    <img src='<%- monData.sprites.other.dream_world.front_default %>' height= '250px'> 
 
-<h3>Abilities:</h3>
-<ul>
-    <% monData.abilities.forEach(ability=> { %>
-        <li><%= ability.ability.name %></li>
-    <% }) %>
-</ul>
-
-<h3>Moves: </h3>
-<ul>
-    <% monData.moves.forEach(move=> { %>
-        <li> <%= move.move.name %> </li>
-    <% }) %>
-</ul>
-
-
-<h3>Height:</h3>
-<p><%= monData.height %></p>
-
+    <h3>Abilities:</h3>
+    <ul>
+        <% monData.abilities.forEach(ability=> { %>
+            <li><%= ability.ability.name %></li>
+        <% }) %>
+    </ul>
+    
+    <h3>Moves: </h3>
+    <ul>
+        <% monData.moves.forEach(move=> { %>
+            <% let moves= []; 
+            moves.push(`${move.move.name}, `); %>
+            <%= moves %>
+            <!-- <li> <%#= move.move.name %> </li> -->
+        <% }) %>
+    </ul>
+    
+    <h3>Height:</h3>
+    <p><%= monData.height %></p>
+</div>
