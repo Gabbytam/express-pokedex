@@ -62,7 +62,7 @@ router.delete('/:id', (req, res)=> {
     where: {id: req.params.id}
   })
   .then(removedRows=> {
-    console.log(removedRows, ' of rows were removed');
+    console.log(removedRows, ' row(s) was removed');
     res.redirect('/pokemon');
   })
 })

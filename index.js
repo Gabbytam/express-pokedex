@@ -4,7 +4,6 @@ const axios = require('axios');
 const ejsLayouts = require('express-ejs-layouts');
 const app = express();
 const port = process.env.PORT || 3000;
-//const db= require('./models');
 const methodOverride= require('method-override');
 const helper= require('./helpers');
 
@@ -14,19 +13,6 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 app.use(express.static('public'));
-
-// db.pokemon
-//   .create({
-//     name: "ekans",
-//     id: 2
-//   })
-//   .then(function (poke) {
-//     console.log("Created: ", poke.name);
-//   });
-
-// db.pokemon.findAll().then(function (poke) {
-//   console.log("Found: ", poke.name);
-// });
 
 
 // GET / - main index of site

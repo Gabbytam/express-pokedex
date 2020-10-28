@@ -9,9 +9,6 @@ body {
     font-family: 'Turret Road', cursive;
 }
 
-h1, h2 {
-    font-family: 'Turret Road', cursive;
-}
 
 .container {
     display: flex;
@@ -64,3 +61,43 @@ button:hover {
 li {
     list-style-type: none;
 }
+
+#whoDat {
+    width: 700px;
+    height: 375px;
+    background-image: url(https://www.heraldscotland.com/resources/images/5283517/);
+    background-size: cover;
+    position: relative;
+    border-radius: 10px;
+}
+
+#pic {
+    height: 250px;
+    position: absolute;
+    left: 70px;
+    top: 50px;
+}
+
+.textBox {
+    background: rgba(255, 255, 255, 0.735);
+    border-radius: 10px;
+}
+
+#outside {
+    display: flex;
+    flex-direction: row;
+}
+
+.inside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    height: 125px;
+    margin: 0 40px 0 40px;
+}
+
+p {
+    margin: 0 auto;
+}
+
