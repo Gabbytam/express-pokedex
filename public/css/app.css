@@ -1,0 +1,66 @@
+
+/* body {
+    background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/12ecb7ae-7059-48df-a4f8-2e3fb7858606/d47rmjf-de88a574-49c8-4dcf-9df4-7e11722e8bec.png/v1/fill/w_454,h_340,q_80,strp/who_s_that_pokemon__by_amitlu89_d47rmjf-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0zNDAiLCJwYXRoIjoiXC9mXC8xMmVjYjdhZS03MDU5LTQ4ZGYtYTRmOC0yZTNmYjc4NTg2MDZcL2Q0N3JtamYtZGU4OGE1NzQtNDljOC00ZGNmLTlkZjQtN2UxMTcyMmU4YmVjLnBuZyIsIndpZHRoIjoiPD00NTQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.h30ApRqrtJHs1_YpIQAGAoNuAlHr5D9vfR4H0mpyQEQ);
+    background-size: cover;
+} */
+
+body {
+    background-image: url(https://wallpaper-house.com/data/out/7/wallpaper2you_147631.png);
+    font-family: 'Turret Road', cursive;
+}
+
+h1, h2 {
+    font-family: 'Turret Road', cursive;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.well {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.735);
+    width: 80%;
+    height: 125px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.favBox {
+    width: 300px;
+    height: 100px;
+}
+
+/* button styling from https://www.csswand.dev/ */
+button, input {
+    font-family: 'Turret Road', cursive;
+    color: #1D9AF2;
+    background-color: #292D3E;
+    border: 1px solid #1D9AF2;
+    border-radius: 4px;
+    padding: 0 15px;
+    cursor: pointer;
+    height:32px;
+    font-size:14px;
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+    box-shadow: 1px 1px #53a7ea, 2px 2px #53a7ea, 3px 3px #53a7ea;
+    transform: translateX(-3px);
+}
+
+#inputBtn {
+    margin-top: 10px;
+}
+
+li {
+    list-style-type: none;
+}

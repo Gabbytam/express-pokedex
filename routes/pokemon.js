@@ -6,6 +6,7 @@ const axios= require('axios');
 //require the helpers js file and set to variable so it can be referenced and used in the object part of res.render 
 const helper= require('../helpers');
 
+
 // GET /pokemon - return a page with favorited Pokemon
 router.get('/', function(req, res) {
   // TODO: Get all records from the DB and render to view
@@ -30,6 +31,7 @@ router.post('/', function(req, res) {
   })
 });
 
+
 router.get('/:id', (req, res)=> {
   //req.params.id is where the id of the pokemon (from the URL) is stored
   //that id number is attached to the pokemon name through the database in SQL
@@ -40,7 +42,7 @@ router.get('/:id', (req, res)=> {
   .then(foundMon=> {
     //console.log('heres the pokemon attached to selected id', foundMon);
     console.log(foundMon.name);
-    axios.get(`https://pokeapi.co/api/v2/pokemon/${foundMon.name}`)
+    axios.get(`https://pokeapi.co/api/v2/pokemon/${foundMon.name.toLowerCase()}`)
     .then(response=> {
       //res.send(response.data);
       res.render('show', {monId: req.params.id, monName: foundMon.name, monData: response.data, fxn: helper}); //pass the helper with ejs render
@@ -51,6 +53,17 @@ router.get('/:id', (req, res)=> {
   })
   .catch(error=> {
     console.log('db.then error: ', error);
+  })
+})
+
+//delete route 
+router.delete('/:id', (req, res)=> {
+  db.pokemon.destroy({
+    where: {id: req.params.id}
+  })
+  .then(removedRows=> {
+    console.log(removedRows, ' of rows were removed');
+    res.redirect('/pokemon');
   })
 })
 
